@@ -1,0 +1,92 @@
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const Navbar = () => {
+    const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const navLinks = [
+        { name: 'About', href: '#about' },
+        { name: 'Services', href: '#services' },
+        { name: 'How It Works', href: '#how-it-works' },
+        { name: 'Contact', href: '#contact' },
+    ];
+
+    return (
+        <nav className={scrolled ? 'scrolled' : ''}>
+            <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div className="logo" style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)' }}>
+                    Centro<span style={{ color: 'var(--secondary)' }}>-Medical</span>
+                </div>
+
+                {/* Desktop Nav */}
+                <div style={{ display: 'none', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
+                    <ul style={{ display: 'flex', gap: '2rem', fontWeight: 500 }}>
+                        {navLinks.map((link) => (
+                            <li key={link.name}>
+                                <a href={link.href} style={{ fontSize: '0.95rem' }}>{link.name}</a>
+                            </li>
+                        ))}
+                    </ul>
+                    <a href="#contact" className="btn btn-primary">Book a Call</a>
+                </div>
+
+                {/* Mobile Toggle */}
+                <div style={{ display: 'block' }} className="mobile-toggle">
+                    <button
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+                    >
+                        {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile Menu */}
+            {mobileMenuOpen && (
+                <div style={{
+                    position: 'absolute',
+                    top: '100%',
+                    left: 0,
+                    width: '100%',
+                    background: 'var(--white)',
+                    padding: '2rem',
+                    boxShadow: '0 10px 15px rgba(0,0,0,0.1)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1.5rem',
+                    textAlign: 'center'
+                }}>
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.name}
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            style={{ fontSize: '1.1rem', fontWeight: 500 }}
+                        >
+                            {link.name}
+                        </a>
+                    ))}
+                    <a href="#contact" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Book a Call</a>
+                </div>
+            )}
+
+            <style jsx>{`
+        @media (min-width: 768px) {
+          .desktop-nav { display: flex !important; }
+          .mobile-toggle { display: none !important; }
+        }
+      `}</style>
+        </nav>
+    );
+};
+
+export default Navbar;
