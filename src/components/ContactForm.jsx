@@ -35,7 +35,8 @@ const ContactForm = () => {
                 setStatus('success');
                 setFormData({ name: '', email: '', type: 'Individual', message: '' });
             } else {
-                throw new Error(data.message || 'Failed to send message');
+                const detailedError = data.error || data.detail || 'Failed to send message';
+                throw new Error(detailedError);
             }
         } catch (error) {
             console.error('Submission error:', error);
