@@ -1,4 +1,6 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -11,40 +13,25 @@ export default async function handler(req, res) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
 
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-
-    if (!smtpUser || !smtpPass) {
+    if (!process.env.RESEND_API_KEY) {
         return res.status(500).json({
-            message: 'Server configuration error: Missing SMTP credentials.',
-            detail: 'Ensure SMTP_USER and SMTP_PASS are set in Vercel Environment Variables.'
+            message: 'Server configuration error: Missing API Key.',
+            detail: 'Ensure RESEND_API_KEY is set in Vercel Environment Variables.'
         });
     }
 
-    // Configure Nodemailer with DotRoll SMTP
-    const transporter = nodemailer.createTransport({
-        host: 'mail.centro-medical.com.au',
-        port: 587,
-        secure: false, // Use STARTTLS
-        auth: {
-            user: smtpUser,
-            pass: smtpPass,
-        },
-        timeout: 25000,
-    });
-
     try {
-        // Send email notification
-        await transporter.sendMail({
-            from: `"Centro-Medical Web" <${smtpUser}>`,
-            to: 'info@centro-medical.com.au',
+        const { data, error } = await resend.emails.send({
+            from: 'Centro-Medical <notifications@centro-medical.com.au>',
+            to: ['info@centro-medical.com.au'],
             subject: `New Enquiry from ${name} (${type})`,
+            replyTo: email,
             text: `
 Name: ${name}
 Email: ${email}
 Type: ${type}
 Message: ${message}
-      `,
+            `,
             html: `
                 <h3>New Enquiry from Landing Page</h3>
                 <p><strong>Name:</strong> ${name}</p>
@@ -53,16 +40,22 @@ Message: ${message}
                 <p><strong>Message:</strong></p>
                 <p>${message.replace(/\n/g, '<br>')}</p>
             `,
-            replyTo: email,
         });
 
-        return res.status(200).json({ message: 'Enquiry sent successfully' });
+        if (error) {
+            console.error('Resend error:', error);
+            return res.status(500).json({
+                message: 'Failed to send enquiry via Resend',
+                error: error.message
+            });
+        }
+
+        return res.status(200).json({ message: 'Enquiry sent successfully', id: data.id });
     } catch (error) {
-        console.error('Email sending error:', error);
+        console.error('API Error:', error);
         return res.status(500).json({
-            message: 'Failed to send enquiry',
-            error: error.message,
-            code: error.code // Provides SMTP codes like EAUTH, ECONNREFUSED etc.
+            message: 'An unexpected error occurred',
+            error: error.message
         });
     }
 }
