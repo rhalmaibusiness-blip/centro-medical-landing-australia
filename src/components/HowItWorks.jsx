@@ -71,6 +71,12 @@ const HowItWorks = () => {
                     ))}
                 </div>
 
+                <div style={{ marginTop: '4rem', textAlign: 'center' }}>
+                    <p style={{ fontSize: '1.1rem', color: 'var(--gray-700)', maxWidth: '800px', margin: '0 auto' }}>
+                        We work with Australian allied health providers, rehabilitation specialists and corporate wellbeing partners under structured engagement models.
+                    </p>
+                </div>
+
                 <div style={{
                     marginTop: '5rem',
                     padding: '2rem',

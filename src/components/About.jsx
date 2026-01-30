@@ -57,7 +57,7 @@ const About = () => {
                     <span style={{ color: 'var(--secondary)', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.875rem' }}>Who We Are</span>
                     <h2 style={{ fontSize: '2.5rem', marginTop: '1rem', marginBottom: '1.5rem' }}>Elevating Healthcare Management in Australia</h2>
                     <p style={{ fontSize: '1.1rem', color: 'var(--gray-700)', marginBottom: '1.5rem' }}>
-                        Centro-Medical Australia Pty Ltd is an Australian proprietary company incorporated in New South Wales (Registered 18 August 2025).
+                        Centro-Medical Australia Pty Ltd is an Australian proprietary company incorporated in New South Wales (Registered 18 August 2025). Onshore coordination and governance ensure quality, compliance and effective local delivery.
                     </p>
                     <p style={{ fontSize: '1.1rem', color: 'var(--gray-700)', marginBottom: '2rem' }}>
                         Established as the Australian arm of a proven European medical group, we bring operational excellence and clinical program expertise to the local market.

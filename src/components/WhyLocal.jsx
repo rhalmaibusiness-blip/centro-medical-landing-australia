@@ -42,6 +42,23 @@ const WhyLocal = () => {
                         </motion.div>
                     ))}
                 </div>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                    style={{
+                        marginTop: '3rem',
+                        fontSize: '1.1rem',
+                        color: 'var(--gray-700)',
+                        textAlign: 'center',
+                        maxWidth: '800px',
+                        marginInline: 'auto',
+                        lineHeight: '1.6'
+                    }}
+                >
+                    Our Australian operations are overseen by onshore senior management responsible for regulatory compliance, partner engagement, quality assurance and local business development.
+                </motion.p>
             </motion.div>
         </section>
     );
