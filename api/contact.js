@@ -23,18 +23,14 @@ export default async function handler(req, res) {
 
     // Configure Nodemailer with DotRoll SMTP
     const transporter = nodemailer.createTransport({
-        host: '185.33.52.235', // Direct IP for mx1.dotroll.com
-        port: 465,
-        secure: true, // Use SSL
+        host: 'mail.centro-medical.com.au',
+        port: 587,
+        secure: false, // Use STARTTLS
         auth: {
             user: smtpUser,
             pass: smtpPass,
         },
-        timeout: 25000, // 25 seconds timeout
-        tls: {
-            // Since we are using an IP, we might need to ignore name mismatch
-            rejectUnauthorized: false
-        }
+        timeout: 25000,
     });
 
     try {
