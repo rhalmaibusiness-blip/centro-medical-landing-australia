@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { MapPin, Mail, Send, Loader2, CheckCircle, XCircle } from 'lucide-react';
 
 const ContactForm = () => {
