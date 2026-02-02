@@ -12,6 +12,7 @@ const Footer = () => {
                         <p style={{ opacity: 0.7, fontSize: '0.9rem', lineHeight: '1.8' }}>
                             Centro-Medical Australia Pty Ltd<br />
                             Warrawee, NSW 2074, Australia<br />
+                            Phone: <a href="tel:0409351223" style={{ color: 'white' }}>0409 351 223</a><br />
                             ABN 23 690 098 410<br />
                             ACN 690 098 410
                         </p>

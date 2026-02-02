@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -36,7 +36,13 @@ const Navbar = () => {
                             </li>
                         ))}
                     </ul>
-                    <a href="#contact" className="btn btn-primary">Book a Call</a>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                        <a href="tel:0409351223" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', fontWeight: 600, color: 'var(--primary)' }}>
+                            <Phone size={18} />
+                            0409 351 223
+                        </a>
+                        <a href="#contact" className="btn btn-primary">Book a Call</a>
+                    </div>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -75,6 +81,10 @@ const Navbar = () => {
                             {link.name}
                         </a>
                     ))}
+                    <a href="tel:0409351223" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 600, color: 'var(--primary)' }} onClick={() => setMobileMenuOpen(false)}>
+                        <Phone size={20} />
+                        0409 351 223
+                    </a>
                     <a href="#contact" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Book a Call</a>
                 </div>
             )}

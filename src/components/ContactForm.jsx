@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Mail, Send, Loader2, CheckCircle, XCircle } from 'lucide-react';
+import { MapPin, Mail, Phone, Send, Loader2, CheckCircle, XCircle } from 'lucide-react';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -101,6 +101,18 @@ const ContactForm = () => {
                                 <div>
                                     <h5 style={{ fontWeight: 700 }}>Email</h5>
                                     <p style={{ color: 'var(--gray-700)' }}>hello@centromedical.com.au</p>
+                                </div>
+                            </div>
+
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                                <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'var(--gray-100)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--secondary)' }}>
+                                    <Phone size={24} />
+                                </div>
+                                <div>
+                                    <h5 style={{ fontWeight: 700 }}>Phone</h5>
+                                    <p style={{ color: 'var(--gray-700)' }}>
+                                        <a href="tel:0409351223" style={{ color: 'inherit' }}>0409 351 223</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
