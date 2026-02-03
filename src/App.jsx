@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustBar from './components/TrustBar';
@@ -10,25 +11,40 @@ import WhyLocal from './components/WhyLocal';
 import CTASection from './components/CTASection';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import TermsOfService from './components/TermsOfService';
+
+function LandingPage() {
+  return (
+    <>
+      <Hero />
+      <TrustBar />
+      <Services />
+      <About />
+      <WhoWeServe />
+      <HowItWorks />
+      <WhyLocal />
+      <CTASection />
+      <ContactForm />
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <main>
-        <Hero />
-        <TrustBar />
-        <Services />
-        <About />
-        <WhoWeServe />
-        <HowItWorks />
-        <WhyLocal />
-        <CTASection />
-        <ContactForm />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/terms" element={<TermsOfService />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
 export default App;
+

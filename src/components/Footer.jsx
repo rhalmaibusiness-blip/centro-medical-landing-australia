@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -6,9 +7,9 @@ const Footer = () => {
             <div className="container">
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '4rem', marginBottom: '4rem' }}>
                     <div>
-                        <div className="logo" style={{ fontSize: '1.5rem', fontWeight: 800, color: 'white', marginBottom: '1.5rem' }}>
+                        <Link to="/" className="logo" style={{ fontSize: '1.5rem', fontWeight: 800, color: 'white', marginBottom: '1.5rem', display: 'block' }}>
                             Centro<span style={{ color: 'var(--secondary)' }}>-Medical</span>
-                        </div>
+                        </Link>
                         <p style={{ opacity: 0.7, fontSize: '0.9rem', lineHeight: '1.8' }}>
                             Centro-Medical Australia Pty Ltd<br />
                             Warrawee, NSW 2074, Australia<br />
@@ -21,10 +22,10 @@ const Footer = () => {
                     <div>
                         <h5 style={{ color: 'white', marginBottom: '1.5rem', fontWeight: 700 }}>Quick Links</h5>
                         <ul style={{ display: 'grid', gap: '0.75rem', opacity: 0.8, fontSize: '0.9rem' }}>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#how-it-works">How It Works</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="/#about">About</a></li>
+                            <li><a href="/#services">Services</a></li>
+                            <li><a href="/#how-it-works">How It Works</a></li>
+                            <li><a href="/#contact">Contact</a></li>
                         </ul>
                     </div>
 
@@ -32,9 +33,10 @@ const Footer = () => {
                         <h5 style={{ color: 'white', marginBottom: '1.5rem', fontWeight: 700 }}>Legal</h5>
                         <ul style={{ display: 'grid', gap: '0.75rem', opacity: 0.8, fontSize: '0.9rem' }}>
                             <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
+                            <li><Link to="/terms">Terms of Service</Link></li>
                         </ul>
                     </div>
+
 
                     <div>
                         <h5 style={{ color: 'white', marginBottom: '1.5rem', fontWeight: 700 }}>Connect</h5>

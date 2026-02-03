@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -14,18 +16,18 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: 'About', href: '#about' },
-        { name: 'Services', href: '#services' },
-        { name: 'How It Works', href: '#how-it-works' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'About', href: '/#about' },
+        { name: 'Services', href: '/#services' },
+        { name: 'How It Works', href: '/#how-it-works' },
+        { name: 'Contact', href: '/#contact' },
     ];
 
     return (
         <nav className={scrolled ? 'scrolled' : ''}>
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div className="logo" style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)' }}>
+                <Link to="/" className="logo" style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)' }}>
                     Centro<span style={{ color: 'var(--secondary)' }}>-Medical</span>
-                </div>
+                </Link>
 
                 {/* Desktop Nav */}
                 <div style={{ display: 'none', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
@@ -41,9 +43,10 @@ const Navbar = () => {
                             <Phone size={18} />
                             0409 351 223
                         </a>
-                        <a href="#contact" className="btn btn-primary">Book a Call</a>
+                        <a href="/#contact" className="btn btn-primary">Book a Call</a>
                     </div>
                 </div>
+
 
                 {/* Mobile Toggle */}
                 <div style={{ display: 'block' }} className="mobile-toggle">
@@ -85,7 +88,8 @@ const Navbar = () => {
                         <Phone size={20} />
                         0409 351 223
                     </a>
-                    <a href="#contact" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Book a Call</a>
+                    <a href="/#contact" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Book a Call</a>
+
                 </div>
             )}
 
