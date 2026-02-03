@@ -32,10 +32,11 @@ const Footer = () => {
                     <div>
                         <h5 style={{ color: 'white', marginBottom: '1.5rem', fontWeight: 700 }}>Legal</h5>
                         <ul style={{ display: 'grid', gap: '0.75rem', opacity: 0.8, fontSize: '0.9rem' }}>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><Link to="/privacy">Privacy Policy</Link></li>
                             <li><Link to="/terms">Terms of Service</Link></li>
                         </ul>
                     </div>
+
 
 
                     <div>

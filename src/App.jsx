@@ -12,6 +12,7 @@ import CTASection from './components/CTASection';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import TermsOfService from './components/TermsOfService';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 function LandingPage() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
           </Routes>
         </main>
         <Footer />
@@ -45,6 +47,7 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;
 
