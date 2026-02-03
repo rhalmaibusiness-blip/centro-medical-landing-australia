@@ -100,7 +100,9 @@ const ContactForm = () => {
                                 </div>
                                 <div>
                                     <h5 style={{ fontWeight: 700 }}>Email</h5>
-                                    <p style={{ color: 'var(--gray-700)' }}>hello@centromedical.com.au</p>
+                                    <p style={{ color: 'var(--gray-700)' }}>
+                                        <a href="mailto:info@centro-medical.com.au" style={{ color: 'inherit' }}>info@centro-medical.com.au</a>
+                                    </p>
                                 </div>
                             </div>
 

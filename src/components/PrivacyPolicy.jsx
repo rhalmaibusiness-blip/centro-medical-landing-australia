@@ -115,7 +115,7 @@ const PrivacyPolicy = () => {
                             <h3 style={{ marginBottom: '1.5rem' }}>9. Contact Us</h3>
                             <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us at:</p>
                             <p style={{ marginTop: '1rem', marginBottom: '0.5rem' }}><strong>Centro-Medical Australia Pty Ltd</strong></p>
-                            <p style={{ marginBottom: '0.5rem' }}>📧 <a href="mailto:info@centromedical.com.au" style={{ color: 'var(--secondary)', fontWeight: 600 }}>info@centromedical.com.au</a></p>
+                            <p style={{ marginBottom: '0.5rem' }}>📧 <a href="mailto:info@centro-medical.com.au" style={{ color: 'var(--secondary)', fontWeight: 600 }}>info@centro-medical.com.au</a></p>
                             <p>📞 <a href="tel:0409351223" style={{ color: 'var(--secondary)', fontWeight: 600 }}>0409 351 223</a></p>
                         </section>
                     </div>

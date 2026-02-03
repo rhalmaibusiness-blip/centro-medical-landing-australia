@@ -10,12 +10,12 @@ const TermsOfService = () => {
     return (
         <div style={{ backgroundColor: 'var(--bg-alt)', minHeight: '100vh', paddingTop: '120px', paddingBottom: '80px' }}>
             <div className="container">
-                <Link 
-                    to="/" 
-                    className="btn btn-outline" 
-                    style={{ 
-                        marginBottom: '2rem', 
-                        padding: '0.5rem 1rem', 
+                <Link
+                    to="/"
+                    className="btn btn-outline"
+                    style={{
+                        marginBottom: '2rem',
+                        padding: '0.5rem 1rem',
                         fontSize: '0.9rem',
                         display: 'inline-flex',
                         alignItems: 'center',
@@ -25,10 +25,10 @@ const TermsOfService = () => {
                     <ArrowLeft size={18} /> Back to Home
                 </Link>
 
-                <div style={{ 
-                    backgroundColor: 'white', 
-                    padding: '3rem', 
-                    borderRadius: '20px', 
+                <div style={{
+                    backgroundColor: 'white',
+                    padding: '3rem',
+                    borderRadius: '20px',
                     boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
                     maxWidth: '900px',
                     margin: '0 auto'
@@ -190,7 +190,7 @@ const TermsOfService = () => {
                             <h3 style={{ marginBottom: '1.5rem', color: 'white' }}>17. Contact</h3>
                             <p style={{ marginBottom: '0.5rem' }}><strong>Centro-Medical Australia Pty Ltd</strong></p>
                             <p style={{ marginBottom: '0.5rem' }}>Warrawee, NSW 2074, Australia</p>
-                            <p style={{ marginBottom: '0.5rem' }}>📧 <a href="mailto:info@centromedical.com.au" style={{ color: 'var(--accent)' }}>info@centromedical.com.au</a></p>
+                            <p style={{ marginBottom: '0.5rem' }}>📧 <a href="mailto:info@centro-medical.com.au" style={{ color: 'var(--accent)' }}>info@centro-medical.com.au</a></p>
                             <p>📞 <a href="tel:0409351223" style={{ color: 'var(--accent)' }}>0409 351 223</a></p>
                         </section>
                     </div>
