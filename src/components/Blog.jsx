@@ -11,7 +11,7 @@ const Blog = () => {
 
     return (
         <div className="blog-page">
-            <section className="blog-hero">
+            <section className="blog-hero" style={{ paddingBottom: '0' }}>
                 <div className="container" style={{ textAlign: 'center', paddingTop: '120px' }}>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ const Blog = () => {
                 </div>
             </section>
 
-            <section className="blog-grid-section">
+            <section className="blog-grid-section" style={{ paddingTop: '2rem' }}>
                 <div className="container">
                     <div className="blog-grid">
                         {blogPosts.map((post, index) => (
