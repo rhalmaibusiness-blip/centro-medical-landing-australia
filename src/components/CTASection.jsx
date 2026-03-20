@@ -20,8 +20,8 @@ const CTASection = () => {
                         Book a discovery call or send an enquiry — we'll respond within 1 business day.
                     </p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-                        <a href="#contact" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>Book a Call</a>
-                        <a href="#contact" className="btn btn-outline" style={{ border: '2px solid white', color: 'white', padding: '1rem 2.5rem' }}>Send Enquiry ↓</a>
+                        <a href="/#contact" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>Book a Call</a>
+                        <a href="/#contact" className="btn btn-outline" style={{ border: '2px solid white', color: 'white', padding: '1rem 2.5rem' }}>Send Enquiry ↓</a>
                     </div>
                 </div>
 

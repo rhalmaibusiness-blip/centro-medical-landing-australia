@@ -13,6 +13,8 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import Blog from './components/Blog';
+import BlogPost from './components/BlogPost';
 
 function LandingPage() {
   return (
@@ -40,6 +42,8 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </main>
         <Footer />
