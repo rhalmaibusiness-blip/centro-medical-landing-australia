@@ -4,8 +4,8 @@ import { CheckCircle2 } from 'lucide-react';
 const TrustBar = () => {
     const items = [
         "Backed by European healthcare expertise",
-        "Australian owned & operated",
-        "AHPRA-compliant delivery model"
+        "Australian incorporated company",
+        "Our service model is designed to work with appropriately qualified and registered Australian healthcare practitioners, where required."
     ];
 
     return (

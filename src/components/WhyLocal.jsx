@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const WhyLocal = () => {
     const features = [
-        { title: "Compliance Oversight", desc: "Local regulatory management and adherence to Australian standards." },
+        { title: "Compliance Oversight", desc: "Regulatory oversight aligned with Australian standards." },
         { title: "Quality Control", desc: "Hands-on stakeholder management and rigorous QA processes." },
-        { title: "Growth & BD", desc: "Commercial expansion and local partnership development from within AU." }
+        { title: "Growth & BD", desc: "Business development focused on the Australian market." }
     ];
 
     return (
@@ -17,7 +17,7 @@ const WhyLocal = () => {
                 transition={{ duration: 0.8 }}
                 className="container"
             >
-                <h2 className="section-title">Why Australian-Based Management Matters</h2>
+                <h2 className="section-title">Why Australian Operations Management Matters</h2>
                 <div style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -57,7 +57,7 @@ const WhyLocal = () => {
                         lineHeight: '1.6'
                     }}
                 >
-                    Our Australian operations are overseen by onshore senior management responsible for regulatory compliance, partner engagement, quality assurance and local business development.
+                    Senior management overseeing the development of our Australian operations provides direction across regulatory compliance, partner engagement, quality assurance and business development focused on the Australian market.
                 </motion.p>
             </motion.div>
         </section>
